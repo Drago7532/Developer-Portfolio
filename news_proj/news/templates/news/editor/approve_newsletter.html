@@ -1,0 +1,14 @@
+{% extends "news/base.html" %}
+{% block title %}Approve Newsletter{% endblock %}
+
+{% block content %}
+<h1>Approve Newsletter</h1>
+<h3>{{ newsletter.title }}</h3>
+<p>{{ newsletter.content }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Approve</button>
+</form>
+<a href="{% url 'news:newsletter_review_list' %}">Back to Review List</a>
+{% endblock %}

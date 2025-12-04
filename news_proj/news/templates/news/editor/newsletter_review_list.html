@@ -1,0 +1,23 @@
+{% extends "news/base.html" %}
+{% block title %}Newsletter Review{% endblock %}
+
+{% block content %}
+<h1>Newsletters Pending Approval</h1>
+
+{% if newsletters %}
+    {% for newsletter in newsletters %}
+        <div class="newsletter-card">
+            <h3>{{ newsletter.title }}</h3>
+            <p><strong>Publisher:</strong> {{ newsletter.publisher.name }}</p>
+            <p><strong>Author:</strong> {{ newsletter.author.username }}</p>
+            <p>{{ newsletter.content|truncatewords:20 }}</p>
+
+            <a href="{% url 'news:approve_newsletter' newsletter.id %}">
+                <button>Review & Approve</button>
+            </a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No newsletters to review.</p>
+{% endif %}
+{% endblock %}

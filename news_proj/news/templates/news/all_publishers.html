@@ -1,0 +1,58 @@
+{% extends "news/base.html" %}
+{% block title %}All Publishers & Journalists{% endblock %}
+
+{% block content %}
+<h1>All Publishers</h1>
+
+{% for publisher in publishers %}
+    <div class="publisher-card">
+        <h3>{{ publisher.name }}</h3>
+        {% if publisher.description %}
+            <p>{{ publisher.description|truncatewords:20 }}</p>
+        {% endif %}
+
+        {% if publisher in user.subscribed_publishers.all %}
+            <form method="post" action="{% url 'news:unsubscribe_publisher' publisher.id %}">
+                {% csrf_token %}
+                <button>Unsubscribe</button>
+            </form>
+        {% else %}
+            <form method="post" action="{% url 'news:subscribe_publisher' publisher.id %}">
+                {% csrf_token %}
+                <button>Subscribe</button>
+            </form>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No publishers available.</p>
+{% endfor %}
+
+<hr>
+
+<h1>All Journalists</h1>
+
+{% for journalist in journalists %}
+    <div class="journalist-card">
+        <h3>{{ journalist.get_full_name|default:journalist.username }}</h3>
+
+        {% if journalist in user.subscribed_journalists.all %}
+            <form method="post" action="{% url 'news:unsubscribe_journalist' journalist.id %}">
+                {% csrf_token %}
+                <button>Unsubscribe</button>
+            </form>
+        {% else %}
+            <form method="post" action="{% url 'news:subscribe_journalist' journalist.id %}">
+                {% csrf_token %}
+                <button>Subscribe</button>
+            </form>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No journalists available.</p>
+{% endfor %}
+
+<div class="back-button">
+    <a href="{% url 'news:public_articles' %}"><button>Back to Home</button></a>
+</div>
+
+{% endblock %}

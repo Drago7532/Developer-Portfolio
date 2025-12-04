@@ -1,0 +1,39 @@
+{% extends "news/base.html" %}
+{% block title %}My Subscriptions{% endblock %}
+
+{% block content %}
+<h1>My Subscription Feed</h1>
+
+{% for article in page_obj %}
+    <div class="article-card">
+        <h3>{{ article.title }}</h3>
+        <p><strong>{{ article.publisher.name }}</strong></p>
+        <p>{{ article.content|truncatewords:30 }}</p>
+
+        <a href="{% url 'news:article_detail' article.id %}">
+            <button>Read</button>
+        </a>
+    </div>
+{% empty %}
+    <p>You have no subscription-based articles.</p>
+{% endfor %}
+
+<!-- Pagination controls -->
+<div class="pagination">
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}"><button>Previous</button></a>
+    {% endif %}
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}"><button>Next</button></a>
+    {% endif %}
+</div>
+
+<div class="back-button">
+    <a href="{% url 'news:public_articles' %}"><button>Back to Home</button></a>
+</div>
+
+{% endblock %}
+

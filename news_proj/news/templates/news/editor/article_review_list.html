@@ -1,0 +1,25 @@
+{% extends "news/base.html" %}
+{% block title %}Editor Review{% endblock %}
+
+{% block content %}
+<h1>Articles Pending Approval</h1>
+
+{% if articles %}
+    {% for article in articles %}
+        <div class="article-card">
+            <h3>{{ article.title }}</h3>
+            <p><strong>Publisher:</strong> {{ article.publisher.name }}</p>
+            <p><strong>Author:</strong> {{ article.author.username }}</p>
+            <p>{{ article.content|truncatewords:20 }}</p>
+
+            <a href="{% url 'news:approve_article' article.id %}">
+                <button>Review & Approve</button>
+            </a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No articles to review.</p>
+{% endif %}
+{% endblock %}
+
+

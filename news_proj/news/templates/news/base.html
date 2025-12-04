@@ -1,0 +1,53 @@
+{% load static %}
+{% load user_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}News App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+
+            {% if user.is_authenticated %}
+                {% if user|in_group:"Reader" %}
+                    <li><a href="{% url 'news:subscriptions' %}">My Subscriptions</a></li>
+                {% endif %}
+
+                {% if user|in_group:"Editor" %}
+                    <li><a href="{% url 'news:article_review_list' %}">Editor Dashboard</a></li>
+                {% endif %}
+
+                {% if user|in_group:"Journalist" %}
+                    <li><a href="{% url 'news:my_articles' %}">My Articles</a></li>
+
+                    <li><a href="{% url 'news:my_newsletters' %}">My Newsletters</a></li>
+                {% endif %}
+
+                <form method="post" action="{% url 'news:logout' %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+
+                <li>Logged in as: {{ user.username }}</li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'news:signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; {{ now.year }} News Application</p>
+    </footer>
+</body>
+</html>

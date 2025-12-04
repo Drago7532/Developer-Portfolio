@@ -1,0 +1,24 @@
+{% extends "news/base.html" %}
+{% block title %}View Newsletter{% endblock %}
+
+{% block content %}
+<h1>{{ newsletter.title }}</h1>
+
+<p><strong>Publisher:</strong> {{ newsletter.publisher.name }}</p>
+<p><strong>Created:</strong> {{ newsletter.created_at|date:"d M Y H:i" }}</p>
+
+<p>
+    <strong>Status:</strong>
+    {% if newsletter.approved_by_editor %}
+        Approved
+    {% else %}
+        Pending Review
+    {% endif %}
+</p>
+
+<p>{{ newsletter.content }}</p>
+
+<a href="{% url 'news:all_newsletters' %}">
+    <button>Back</button>
+</a>
+{% endblock %}

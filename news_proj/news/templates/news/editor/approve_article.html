@@ -1,0 +1,21 @@
+{% extends "news/base.html" %}
+{% block title %}Approve Article{% endblock %}
+
+{% block content %}
+<h2>Approve Article</h2>
+
+<div class="article-card">
+    <h3>{{ article.title }}</h3>
+    <p><strong>Publisher:</strong> {{ article.publisher.name }}</p>
+    <p><strong>Author:</strong> {{ article.author.username }}</p>
+    <hr>
+    <p>{{ article.content|linebreaks }}</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Approve Article</button>
+    <a href="{% url 'news:article_review_list' %}">Cancel</a>
+</form>
+{% endblock %}
+

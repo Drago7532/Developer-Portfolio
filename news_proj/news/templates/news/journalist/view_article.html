@@ -1,0 +1,11 @@
+{% extends "news/base.html" %}
+{% block title %}View Article{% endblock %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+<p><strong>Publisher:</strong> {{ article.publisher.name }}</p>
+<p><strong>Created:</strong> {{ article.created_at|date:"d M Y H:i" }}</p>
+<p><strong>Status:</strong> {% if article.approved_by_editor %}Approved{% else %}Pending Review{% endif %}</p>
+<p>{{ article.content }}</p>
+<a href="{% url 'news:my_articles' %}"><button>Back to My Articles</button></a>
+{% endblock %}

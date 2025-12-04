@@ -1,0 +1,14 @@
+{% extends "news/base.html" %}
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<div class="article-card">
+    <h1>{{ article.title }}</h1>
+    <p><strong>Publisher:</strong> {{ article.publisher.name }}</p>
+    <p><strong>Author:</strong> {{ article.author.username }}</p>
+    <hr>
+    <p>{{ article.content|linebreaks }}</p>
+</div>
+
+<a href="{% url 'news:all_articles' %}">← Back to Articles</a>
+{% endblock %}

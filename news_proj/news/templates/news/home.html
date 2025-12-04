@@ -1,0 +1,219 @@
+{% extends "news/base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.role-dashboard {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 200px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.dashboard-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.dashboard-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.dashboard-card button:hover {
+    background-color: #0056b3;
+}
+
+.article-card, .newsletter-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.article-card h3, .newsletter-card h3 {
+    margin-top: 0;
+    color: #222;
+}
+
+.article-card p, .newsletter-card p {
+    color: #555;
+}
+
+.article-card strong, .newsletter-card strong {
+    color: #007bff;
+}
+
+.article-card button, .newsletter-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.article-card button:hover, .newsletter-card button:hover {
+    background-color: #1e7e34;
+}
+
+h2 {
+    color: #444;
+    margin-top: 40px;
+}
+
+.nav-buttons {
+    margin-bottom: 20px;
+}
+
+.nav-buttons a button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.nav-buttons a button:hover {
+    background-color: #117a8b;
+}
+</style>
+
+<h1>Welcome to the news app{% if user.is_authenticated %}, {{ user.username }}{% endif %}</h1>
+
+{% if user.is_authenticated %}
+
+    {% if user.role == "journalist" %}
+        {% if publisher %}
+            <p><strong>Assigned Publisher:</strong> {{ publisher.name }}</p>
+        {% else %}
+            <p style="color:red;"><strong>You are not assigned to a publisher yet.</strong></p>
+        {% endif %}
+    {% endif %}
+
+    <div class="role-dashboard">
+
+        {% if user.role == 'journalist' %}
+            <div class="dashboard-card">
+                <h3>Articles</h3>
+                <a href="{% url 'news:create_article' %}">
+                    <button>Create Article</button>
+                </a>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Newsletters</h3>
+                <a href="{% url 'news:create_newsletter' %}">
+                    <button>Create Newsletter</button>
+                </a>
+            </div>
+
+        {% elif user.role == 'editor' %}
+            <div class="dashboard-card">
+                <h3>Review Articles</h3>
+                <a href="{% url 'news:article_review_list' %}">
+                    <button>Review Articles</button>
+                </a>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Review Newsletters</h3>
+                <a href="{% url 'news:newsletter_review_list' %}">
+                    <button>Review Newsletters</button>
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+{% endif %}
+
+<hr>
+
+<div class="nav-buttons">
+    <a href="{% url 'news:all_articles' %}"><button>All Articles</button></a>
+    <a href="{% url 'news:all_newsletters' %}"><button>All Newsletters</button></a>
+</div>
+
+<div class="dashboard-card">
+    <h3>Subscription Feed</h3>
+    <a href="{% url 'news:subscription_feed' %}">
+        <button>View Subscriptions</button>
+    </a>
+</div>
+
+<div class="dashboard-card">
+    <h3>Publishers & Journalists</h3>
+    <a href="{% url 'news:all_publishers' %}">
+        <button>Browse Subscriptions</button>
+    </a>
+</div>
+
+<h2>Published Articles</h2>
+
+{% for article in articles %}
+    <div class="article-card">
+        <h3>{{ article.title }}</h3>
+        {% if article.publisher %}
+            <p><strong>{{ article.publisher.name }}</strong></p>
+        {% endif %}
+        <p>{{ article.content|truncatewords:12 }}</p>
+        <a href="{% url 'news:article_detail' article.id %}">
+            <button>Read More</button>
+        </a>
+    </div>
+{% empty %}
+    <p>No articles available.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Published Newsletters</h2>
+
+{% for newsletter in newsletters %}
+    <div class="newsletter-card">
+        <h3>{{ newsletter.title }}</h3>
+        {% if newsletter.publisher %}
+            <p><strong>{{ newsletter.publisher.name }}</strong></p>
+        {% endif %}
+        <p>{{ newsletter.content|truncatewords:12 }}</p>
+        <a href="{% url 'news:view_newsletter_public' newsletter.id %}">
+            <button>Read More</button>
+        </a>
+
+    </div>
+{% empty %}
+    <p>No newsletters available.</p>
+{% endfor %}
+
+{% endblock %}

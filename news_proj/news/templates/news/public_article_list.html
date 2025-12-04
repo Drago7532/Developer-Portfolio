@@ -1,0 +1,20 @@
+{% extends "news/base.html" %}
+{% block title %}Published Articles{% endblock %}
+
+{% block content %}
+<h1>Published Articles</h1>
+
+{% for article in articles %}
+    <div class="article-card">
+        <h3>{{ article.title }}</h3>
+        <p><strong>{{ article.publisher.name }}</strong></p>
+        <p>{{ article.content|truncatewords:10 }}</p>
+
+        <a href="{% url 'news:article_detail' article.id %}">
+            <button>Read More</button>
+        </a>
+    </div>
+{% empty %}
+    <p>No published articles available.</p>
+{% endfor %}
+{% endblock %}

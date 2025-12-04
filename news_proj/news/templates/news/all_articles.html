@@ -1,0 +1,100 @@
+{% extends "news/base.html" %}
+{% block title %}All Articles{% endblock %}
+
+{% block content %}
+
+<style>
+/* General layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Article cards */
+.article-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.article-card h3 {
+    margin-top: 0;
+    color: #222;
+}
+
+.article-card p {
+    color: #555;
+}
+
+.article-card strong {
+    color: #007bff;
+}
+
+.article-card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.article-card button:hover {
+    background-color: #1e7e34;
+}
+
+/* Section headers */
+h2 {
+    color: #444;
+    margin-top: 40px;
+}
+
+/* Back button */
+.back-button {
+    margin-bottom: 20px;
+}
+
+.back-button a button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.back-button a button:hover {
+    background-color: #117a8b;
+}
+</style>
+
+<h2>All Published Articles</h2>
+
+{% for article in articles %}
+    <div class="article-card">
+        <h3>{{ article.title }}</h3>
+        {% if article.publisher %}
+            <p><strong>{{ article.publisher.name }}</strong></p>
+        {% else %}
+            <p><strong>Unknown Publisher</strong></p>
+        {% endif %}
+        <p>{{ article.content|truncatewords:20 }}</p>
+        <a href="{% url 'news:article_detail' article.id %}">
+            <button>Read More</button>
+        </a>
+    </div>
+{% empty %}
+    <p>No articles available.</p>
+{% endfor %}
+
+<div class="back-button">
+    <a href="{% url 'news:public_articles' %}"><button>Back to Home</button></a>
+</div>
+
+{% endblock %}
