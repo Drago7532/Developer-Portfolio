@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b29b3503-d015-4af8-8470-ac58e4559296" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Developer-Portfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Developer-Portfolio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database Project/shelf_track.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/API-Sequence-diagramPNG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/Notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/batman_jptSUib.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/chair.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/chair_QzSsC0e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/chair_x6VPdEQ.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/keyboard_Ci2pQ0S.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/laptop_2_zHzn62G.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/mouse_LCYdxBR.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/red-octobers_8ebHGmc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/remote-car.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/remote-car_HJjAvYS.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/media/products/speaker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/query" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/api/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/api/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/api/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/cart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/static/shop/products/default_product.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/auth/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/auth/password_reset_complete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/auth/password_reset_confirm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/auth/password_reset_done.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/auth/password_reset_email.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/auth/password_reset_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/cart/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/emails/invoice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/orders/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/products/default_product.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/products/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/products/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/vendor/product_confirm_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/vendor/product_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/vendor/products_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/vendor/store_confirm_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/vendor/store_form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/templates/shop/vendor/stores_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/utils/twitter_client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop_proj/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop_proj/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop_proj/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop_proj/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eCommerce App/shop_proj/shop_proj/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sticky note planning/Class_diagram.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sticky note planning/Sticky_note_Use_Case.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sticky note planning/sticky_note_sequence.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sticky note planning/sticky_note_ui_architecture.drawio.pdf" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="37seFYcsBBFh11S20vql5ugAI0f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Edgar Fourie/PycharmProjects/Uni-Tests&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b29b3503-d015-4af8-8470-ac58e4559296" name="Changes" comment="" />
+      <created>1767696103175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1767696103175</updated>
+    </task>
+    <servers />
+  </component>
+</project>
