@@ -1,0 +1,5 @@
+- X link of shop: https://x.com/edga61499
+
+- Due to the restrictions of the free tier, X does not allow developer tweets to include attached images. As such, a link is provided in the tweet if a new product has an image.
+
+- Links to view the image of the new product can only be viewed while the server is running.

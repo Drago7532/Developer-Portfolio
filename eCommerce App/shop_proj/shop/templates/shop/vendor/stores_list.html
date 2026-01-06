@@ -1,0 +1,20 @@
+{% extends 'shop/base.html' %}
+{% block title %}My Stores{% endblock %}
+{% block content %}
+<h2>My Stores</h2>
+<a href="{% url 'store_create' %}" class="btn btn-primary mb-3">Add Store</a>
+<ul class="list-group">
+  {% for store in stores %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ store.name }}
+      <div>
+        <a href="{% url 'store_products' store.pk %}" class="btn btn-sm btn-info">Products</a>
+        <a href="{% url 'store_edit' store.pk %}" class="btn btn-sm btn-warning">Edit</a>
+        <a href="{% url 'store_delete' store.pk %}" class="btn btn-sm btn-danger">Delete</a>
+      </div>
+    </li>
+  {% empty %}
+    <li class="list-group-item">You have no stores yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
